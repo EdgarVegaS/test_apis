@@ -1,5 +1,6 @@
 package cl.edgar.api.ram.controllers;
 
+import cl.edgar.api.ram.annotations.LogHeaders;
 import cl.edgar.api.ram.dtos.RickAndMortyCharacter;
 import cl.edgar.api.ram.services.RickAndMortyCharacterService;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,7 @@ public class RickAndMortyCharacterController {
     private final RickAndMortyCharacterService service;
 
     @GetMapping("/{id}")
+    @LogHeaders(texto = "Inicio busqueda character por el rut: {}")
     public RickAndMortyCharacter obtenerPersonajePorId(@PathVariable String id){
         return this.service.obtenerPersonajePorId(id);
     }

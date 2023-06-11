@@ -17,8 +17,6 @@ public class RickAndMortyCharacterServiceImpl implements RickAndMortyCharacterSe
 
     @Override
     public RickAndMortyCharacter obtenerPersonajePorId(final String id) {
-        final var rickAndMortyCharacter = rickAndMortyClient.obtenerPersonaje(id);
-        LOGGER.info(rickAndMortyCharacter.toString());
-        return rickAndMortyCharacter;
+        return rickAndMortyClient.obtenerPersonaje(id);
     }
 }
